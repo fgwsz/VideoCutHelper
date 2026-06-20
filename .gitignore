@@ -1,2 +1,5 @@
+./Qwen
+./asr_env
 ./tts_env
+./*.srt
 ./*.wav
