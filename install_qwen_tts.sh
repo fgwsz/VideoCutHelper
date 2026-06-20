@@ -1,7 +1,9 @@
 #!/bin/bash
+script_dir=$(dirname "$(readlink -f "$0")")
 #安装python-venv
 sudo apt update
 sudo apt install python3.10-venv
+cd "$script_dir"
 python3 -m venv tts_env
 #进入tts_env环境
 source tts_env/bin/activate
