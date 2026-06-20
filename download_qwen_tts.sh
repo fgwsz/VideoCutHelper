@@ -1,3 +1,4 @@
+#!/bin/bash
 # Qwen3-TTS-12Hz
 pip install modelscope
 modelscope download --model Qwen/Qwen3-TTS-Tokenizer-12Hz  --local_dir ./Qwen/Qwen3-TTS-Tokenizer-12Hz

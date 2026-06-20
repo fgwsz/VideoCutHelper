@@ -1,3 +1,4 @@
+#!/bin/bash
 # Download through ModelScope (recommended for users in Mainland China)
 pip install -U modelscope
 modelscope download --model Qwen/Qwen3-ASR-1.7B  --local_dir ./Qwen/Qwen3-ASR-1.7B

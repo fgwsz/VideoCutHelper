@@ -3,7 +3,7 @@ import soundfile as sf
 from qwen_tts import Qwen3TTSModel
 
 model = Qwen3TTSModel.from_pretrained(
-    "/home/fgwsz/Downloads/Qwen3-TTS-12Hz/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
+    "./Qwen/Qwen3-TTS-12Hz-1.7B-VoiceDesign",
     device_map="cpu",
     dtype=torch.float32,
 )

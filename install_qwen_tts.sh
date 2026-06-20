@@ -1,3 +1,4 @@
+#!/bin/bash
 #安装python-venv
 sudo apt update
 sudo apt install python3.10-venv
