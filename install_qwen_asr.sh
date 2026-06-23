@@ -13,5 +13,7 @@ pip install qwen-asr
 python -c "from qwen_asr import Qwen3ASRModel; print('导入成功')"
 #webrtcvad
 pip install webrtcvad
+#tqdm
+pip install tqdm
 #退出asr_env环境
 deactivate
