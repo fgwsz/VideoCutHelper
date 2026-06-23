@@ -394,7 +394,7 @@ def split_text_by_punctuation(text: str, max_chars: int) -> List[str]:
         return [text]
 
     # 1. 按句子结束标点拆分
-    sentence_parts = re.split(r'([。！？；])', text)
+    sentence_parts = re.split(r'([。！？；.?!;])', text)
     merged = []
     for i in range(0, len(sentence_parts)-1, 2):
         merged.append(sentence_parts[i] + sentence_parts[i+1])
@@ -407,7 +407,7 @@ def split_text_by_punctuation(text: str, max_chars: int) -> List[str]:
             final_parts.append(seg)
         else:
             # 2. 按次要标点拆分（逗号、顿号、冒号）
-            sub_parts = re.split(r'([，、：])', seg)
+            sub_parts = re.split(r'([，、：,;:])', seg)
             sub_merged = []
             for i in range(0, len(sub_parts)-1, 2):
                 sub_merged.append(sub_parts[i] + sub_parts[i+1])
@@ -450,7 +450,7 @@ def group_tokens_by_punctuation(
     token_joined = ''.join(token_texts)
 
     # 按句子结束标点拆分原始文本（保留标点）
-    sentences = re.split(r'([。！？；])', raw_text)
+    sentence_parts = re.split(r'([。！？；.?!;])', raw_text)
     merged_sentences = []
     for i in range(0, len(sentences)-1, 2):
         merged_sentences.append(sentences[i] + sentences[i+1])
