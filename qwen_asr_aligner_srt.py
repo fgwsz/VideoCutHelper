@@ -450,7 +450,7 @@ def group_tokens_by_punctuation(
     token_joined = ''.join(token_texts)
 
     # 按句子结束标点拆分原始文本（保留标点）
-    sentence_parts = re.split(r'([。！？；.?!;])', raw_text)
+    sentences = re.split(r'([。！？；.?!;])', raw_text)
     merged_sentences = []
     for i in range(0, len(sentences)-1, 2):
         merged_sentences.append(sentences[i] + sentences[i+1])
