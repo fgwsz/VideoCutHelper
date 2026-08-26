@@ -800,6 +800,19 @@ def main() -> None:
 
     # 确定目标分辨率
     target_res = None
+
+    # ===== 自动检测全部为 AV1 时强制重编码 =====
+    all_av1 = True
+    for vf in video_files:
+        codec = get_video_codec(vf)
+        if codec != 'av1':
+            all_av1 = False
+            break
+    if all_av1:
+        print("🔁 检测到所有视频均为 AV1 编码。AV1 在 MP4 容器中无损拼接兼容性差，")
+        print("   脚本将自动重新编码为 H.264 以保证输出可播放。")
+        target_codec = 'libx264'
+
     if args.resample:
         target_res = get_target_resolution(video_files)
         print(f"📐 启用重编码，目标分辨率：{target_res[0]}x{target_res[1]}")
